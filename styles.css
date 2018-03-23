@@ -1,15 +1,36 @@
 #cage {
-    width: 1200px;
-    height: 800px;
+    width: 500px;
+    height: 500px;
     position: absolute;
     background: transparent;
     border: solid black;
 }
 
 #temple {
-    top: 0px;
-    left: 0px;
+    height: 200px;
+    top: 125px;
+    left: 125px;
     position: absolute;
+    animation-name: fade;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+#rainbow {
+    animation-name: rainbow;
+    animation-duration: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+#title {
+    animation-name: embiggen, rainbow;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 @keyframes rainbow {
@@ -45,10 +66,26 @@
     }
 }
 
-#animate1 {
-    animation-name: rainbow;
-    animation-duration: 0s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+@keyframes embiggen {
+    0% {
+        font-size: 20px;
+        font-family: "Comic Sans MS";
+    }
+    50% {
+        font-size: 50px;
+        font-family: "Comic Sans MS";
+    }
+    100% {
+        font-size: 20px;
+        font-family: "Comic Sans MS";
+    }
+}
 
+@keyframes fade {
+    0% {
+        opacity: .2;
+    }
+    100% {
+        opacity: 1;
+    }
 }
