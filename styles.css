@@ -1,0 +1,54 @@
+#cage {
+    width: 1200px;
+    height: 800px;
+    position: absolute;
+    background: transparent;
+    border: solid black;
+}
+
+#temple {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+}
+
+@keyframes rainbow {
+    0% {
+        background-color: red;
+    }
+    10% {
+        background-color: orange;
+    }
+    20% {
+        background-color: yellow;
+    }
+    30% {
+        background-color: lawngreen;
+    }
+    50% {
+        background-color: turquoise;
+    }
+    60% {
+        background-color: deepskyblue;
+    }
+    70% {
+        background-color: blue;
+    }
+    80% {
+        background-color: indigo;
+    }
+    90% {
+        background-color: deeppink;
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+#animate1 {
+    animation-name: rainbow;
+    animation-duration: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
