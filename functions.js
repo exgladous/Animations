@@ -1,11 +1,11 @@
-var moveButton = document.getElementById("go");
-moveButton.addEventListener("click", enlargeTemple);
 
-function moveTemple() {
-    var direction = document.getElementById("direction").value;
-    if (direction == "up") {
-        var destinationx = xpos + 100;
-        console.log(destinationx);
-        temple.style.left = xpos + "px";
-    }
+var temple = document.getElementById("temple"),
+    animation = setInterval(spintemple, 5),
+    degangle = 0,
+    xpos = 0,
+    ypos = 0;
+
+function spintemple() {
+    degangle++;
+    temple.style.transform = "rotatez(" + degangle + "deg) rotatex(" + degangle + "deg) rotatey(" + degangle + "deg)"
 }

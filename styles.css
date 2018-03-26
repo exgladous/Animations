@@ -1,29 +1,29 @@
-#cage {
-    width: 500px;
-    height: 500px;
+#temple {
+    height: 300px;
+    top: 200px;
+    left: 150px;
     position: absolute;
-    background: transparent;
-    border: solid black;
+    z-index: 2
 }
 
-#temple {
-    height: 200px;
-    top: 125px;
-    left: 125px;
+#bigtemple {
+    height: 800px;
+    top: 150px;
+    left: 0px;
     position: absolute;
     animation-name: fade;
-    animation-duration: 1s;
+    animation-duration: 30s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-
+    z-index: 1
 }
 
 #rainbow {
     animation-name: rainbow;
-    animation-duration: 0s;
+    animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-
+    z-index: 2
 }
 
 #title {
@@ -31,6 +31,7 @@
     animation-duration: 2s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    z-index: 2
 }
 
 @keyframes rainbow {
@@ -83,9 +84,15 @@
 
 @keyframes fade {
     0% {
-        opacity: .2;
+        opacity: 0;
+    }
+    80% {
+        opacity: .1;
+    }
+    90% {
+        opacity: 1;
     }
     100% {
-        opacity: 1;
+        opacity: 0;
     }
 }
