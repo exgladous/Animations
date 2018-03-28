@@ -1,27 +1,73 @@
+////////// spinny temple
+
 var temple = document.getElementById("temple"),
     mousecoords = document.getElementById("mousecoords"),
     animation = setInterval(spintemple, 5),
-    degangle = 0,
-    xpos = 0,
-    ypos = 0;
+    degangle = 0;
 
 function spintemple() {
     degangle++;
     temple.style.transform = "rotatez(" + degangle + "deg) rotatex(" + degangle + "deg) rotatey(" + degangle + "deg)"
 }
 
+////////// temple follows mouse
+
 document.addEventListener("mousemove", templefollow)
+
 function templefollow() {
-    var mouseX = event.clientX,
-        mouseY = event.clientY;
+    var mouseX = event.clientX - (size / 2),
+        mouseY = event.clientY - (size / 2);
 
     temple.style.left = mouseX + "px";
     temple.style.top = mouseY + "px";
 }
 
-window.addEventListener("keypress", frequency);
-function frequency() {
+////////// keyboard interaction
 
-    document.getElementById("rainbow").style.animationDuation = "5s"
+var outputsize = document.getElementById("size"),
+    bg = document.getElementById("rainbow"),
+    title = document.getElementById("title"),
+    so = document.getElementById("so"),
+    to = document.getElementById("to"),
+    bo = document.getElementById("bo"),
+    btime = 1,
+    ttime = 2;
 
+window.addEventListener("keypress", keyreception);
+
+function keyreception(event) {
+    if (event.key === "w") {
+        btime = btime * 5
+        bg.style.animationDuration = btime + "s"
+        bo.textContent = "W/S = Change Background Period | Current: " + btime + "s."
+    } else if (event.key === "s") {
+        btime = btime / 5
+        bg.style.animationDuration = btime + "s"
+        bo.textContent = "A/D = Change Background Period | Current: " + btime + "s."
+    } else if (event.key === "a") {
+        ttime = ttime * 5
+        title.style.animationDuration = ttime + "s"
+        to.textContent = "A/D = Change Background Period | Current: " + ttime + "s."
+    } else if (event.key === "d") {
+        ttime = ttime / 5
+        title.style.animationDuration = ttime + "s"
+        to.textContent = "A/D = Change Background Period | Current: " + ttime + "s."
+    }
+}
+
+////////// mouse click interaction
+
+var size = 300;
+document.addEventListener("click", mousereception);
+
+function mousereception(MouseEvent) {
+    if (MouseEvent.altKey === true) {
+        size = size * 1.5
+        temple.style.height = size + "px"
+        so.textContent = "(ALT) + Left Mouse = Resize Temple | Current: " + size + "px."
+    } else {
+        size = size / 1.5
+        temple.style.height = size + "px"
+        so.textContent = "(ALT) + Left Mouse = Resize Temple | Current: " + size + "px."
+    }
 }

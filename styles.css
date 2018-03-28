@@ -9,7 +9,7 @@
 
 #bigtemple {
     height: 800px;
-    top: 150px;
+    top: 170px;
     left: 0px;
     position: absolute;
     animation-name: fade;
@@ -20,6 +20,7 @@
 }
 
 #rainbow {
+    font-family: "Comic Sans MS";
     animation-name: rainbow;
     animation-duration: 1s;
     animation-timing-function: linear;
@@ -29,7 +30,7 @@
 
 #title {
     animation-name: embiggen, rainbow;
-    animation-duration: 2s;
+    animation-duration: 0s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     z-index: 2
@@ -71,15 +72,12 @@
 @keyframes embiggen {
     0% {
         font-size: 20px;
-        font-family: "Comic Sans MS";
     }
     50% {
         font-size: 50px;
-        font-family: "Comic Sans MS";
     }
     100% {
         font-size: 20px;
-        font-family: "Comic Sans MS";
     }
 }
 
