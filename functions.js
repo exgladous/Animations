@@ -15,8 +15,8 @@ function spintemple() {
 document.addEventListener("mousemove", templefollow)
 
 function templefollow() {
-    var mouseX = event.clientX - (size / 2),
-        mouseY = event.clientY - (size / 2);
+    var mouseX = event.clientX,
+        mouseY = event.clientY;
 
     temple.style.left = mouseX + "px";
     temple.style.top = mouseY + "px";
@@ -70,4 +70,24 @@ function mousereception(MouseEvent) {
         temple.style.height = size + "px"
         so.textContent = "(ALT) + Left Mouse = Resize Temple | Current: " + size + "px."
     }
+}
+
+////////// increasing readability
+
+var textx = 0,
+    texty = 0,
+    xstep = 1,
+    ystep = 1;
+setInterval(bouncingtext,5);
+function bouncingtext() {
+    if (textx > 720 || textx < 0) {
+        xstep = -xstep;
+    }
+     if (texty > 20 || texty < 0) {
+        ystep = -ystep;
+    }
+    textx = textx + xstep;
+    texty = texty + ystep;
+    document.getElementById("bouncytext").style.top = texty + "px";
+    document.getElementById("bouncytext").style.left = textx + "px";
 }
